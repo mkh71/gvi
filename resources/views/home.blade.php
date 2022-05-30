@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="author" content="BPAro">
-    <title>BPAro Dashboard | @yield('title')</title>
+    <meta name="author" content="GVI">
+    <title>GVI Dashboard | @yield('title')</title>
 
     <link href="{{ url('/assets/favicon.png') }}" rel="icon">
     <!--Open Sans Font [ OPTIONAL ]-->
@@ -56,7 +56,7 @@
             You have <a href="#" class="text-main"><span class="badge badge-danger">0</span>  action.</a>
         </div>
         <div class="hide-fixed pull-right pad-rgt">
-            Developed By <strong>@BPAro</strong>.
+            Developed By <strong>@GVI</strong>.
         </div>
         <strong class="pad-lft"><i>{{date('Y')}} &#0169; Copyright - </i><b> {{config()['app']['name']}}</b></strong>
     </footer>

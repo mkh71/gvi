@@ -1,51 +1,136 @@
+@extends('layouts.main')
+@section('title', 'Welcome')
+@section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>BPAro | Login</title>
-
-    <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="{{url('admin/css/bootstrap.min.css')}}" rel="stylesheet">
-    <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="{{url('admin/css/nifty.min.css')}}" rel="stylesheet">
-</head>
-
-
-<body>
-<div id="container" class="cls-container">
-
-    <div id="bg-overlay"></div>
-    <div class="cls-content">
-        <div class="cls-content-sm panel">
-            <div class="panel-body">
-                <div class="mar-ver pad-btm">
-                    <h1 class="h3">BPAro</h1>
-                    <p>Sign In with your email and password</p>
+    <!-- ==================== BANNER SECTION ==================== -->
+    <section class="banner">
+        <div class="container">
+            <div class="swiper banner-slider">
+                <div class="swiper-wrapper">
+                    @foreach($data['slider'] as $slider)
+                    <div class="item swiper-slide">
+                        <img class="img-fluid" src="{{asset('storage/'. $slider->image)}}" alt="{{$slider->title}}">
+                    </div>
+                    @endforeach
                 </div>
-                <form method="POST" action="{{route('login')}}">
-                    {{csrf_field()}}
-                    <div class="form-group">
-                        <input name="email" type="text" class="form-control" placeholder="Email" autofocus>
-                    </div>
-                    <div class="form-group">
-                        <input name="password" type="password" class="form-control" placeholder="Password">
-                    </div>
-
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
-                </form>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </div>
-    <!--===================================================-->
-</div>
-<!--jQuery [ REQUIRED ]-->
-<script src="{{url('admin/js/jquery.min.js')}}"></script>
+    </section>
+    <!-- ==================== BANNER SECTION END ==================== -->
 
-<!--BootstrapJS [ RECOMMENDED ]-->
-<script src="{{url('admin/js/bootstrap.min.js')}}"></script>
-</body>
-</html>
+    <!-- ==================== GREETING SECTION ==================== -->
+    <section class="greeting">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="greeting-content">
+                        <span class="text-uppercase d-flex">WELCOME TO Global Village International</span>
+                        <img src="{{asset('assets')}}/img/greeting.jpg" alt="" class="img-fluid d-block d-md-none pt-50">
+                        <h2>Your Partner for Premium Beauty Brands</h2>
+                        <p>{!! substr(company()->about, 0, 500)  !!} </p>
+                        <a href="{{route('aboutUs')}}">LEARN MORE</a>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="greeting-img">
+                        <img src="{{asset('assets')}}/img/greeting.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== GREETING SECTION END ==================== -->
+
+    <!-- ==================== PRODUCT SECTION ==================== -->
+    <section class="product">
+        <div class="container">
+            <div class="section-title">
+                <h4>PRODUCT CATEGORIES</h4>
+            </div>
+            <div class="row">
+                @foreach($data['categories'] as $category)
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="item">
+                        <img src="{{asset('storage/'.$category->image)}}" alt="{{$category->name}}" class="img-fluid">
+                        <a href="{{ $category->back_link ?? "#" }}" class="overly">
+                            <div class="overflow">
+                                <h3>{{$category->name}}</h3>
+                                <p>
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- ==================== PRODUCT SECTION END ==================== -->
+
+    <!-- ==================== BRAND SECTION ==================== -->
+    <section class="brand">
+        <div class="container">
+            <div class="section-title">
+                <h4>BRANDS</h4>
+            </div>
+            <div class="swiper brand-slider">
+                <div class="swiper-wrapper">
+                    <div class="item swiper-slide"><a href="https://www.flormar.com/"><img src="{{asset('assets')}}/img/brand/01.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="http://clarissinc.com/"><img src="{{asset('assets')}}/img/brand/02.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/RSOLIVEOIL"><img src="{{asset('assets')}}/img/brand/03.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/armaf.deo"><img src="{{asset('assets')}}/img/brand/04.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/layerrshotbd/"><img src="{{asset('assets')}}/img/brand/05.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/clarissbangladesh"><img src="{{asset('assets')}}/img/brand/06.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.luvit.com.bd/brand/Colour-Me-tF8AY"><img src="{{asset('assets')}}/img/brand/07.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/Themanclubofficial"><img src="{{asset('assets')}}/img/brand/08.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/layerrwottagirl.bd"><img src="{{asset('assets')}}/img/brand/09.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.luvit.com.bd/category/fragrances-j9g8n"><img src="{{asset('assets')}}/img/brand/10.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/redhuntbd"><img src="{{asset('assets/')}}/img/brand/11.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="item swiper-slide"><a href="https://www.facebook.com/elavista.bd"><img src="{{asset('assets/')}}/img/brand/12.jpg" alt="" class="img-fluid"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== BRAND SECTION END ==================== -->
+
+@stop
+@section('js')
+    <script>
+        var swiper = new Swiper(".banner-slider", {
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+        var swiper = new Swiper(".brand-slider", {
+            slidesPerView: 3,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                },
+            },
+        });
+    </script>
+@stop

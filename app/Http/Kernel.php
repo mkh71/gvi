@@ -63,9 +63,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'is_otp_verified' => \App\Http\Middleware\CheckOtpVerified::class,
-        'check_system_nurse' => \App\Http\Middleware\CheckSystemNurse::class,
-        'CheckPermit'=>CheckPermit::class,
         /*'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,*/

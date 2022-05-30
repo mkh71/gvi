@@ -7,11 +7,11 @@
             <div class="account-content">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-7 col-lg-6 login-left">
-                        <img src="{{ url('/assets/img/login-banner.png') }}" class="img-fluid" alt="BPAro Login">
+                        <img src="{{ url('/assets/img/login-banner.png') }}" class="img-fluid" alt="GVI Login">
                     </div>
                     <div class="col-md-12 col-lg-6 login-right">
                         <div class="login-header">
-                            <h3>Login <span>BPAro</span></h3>
+                            <h3>Login <span>GVI</span></h3>
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf

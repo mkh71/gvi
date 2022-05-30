@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserInfo;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -52,10 +51,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['nullable', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'mobile' => ['required', 'unique:users'],
-            'country_code' => 'required|in:+1,+91',
         ]);
     }
 
@@ -67,28 +64,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['first_name'].' '.$data['last_name'],
+        return User::create([
+            'name' => $data['name'],
             'email' => $data['email'],
-            'mobile' => $data['mobile'],
             'password' => Hash::make($data['password']),
-            'country_code' => $data['country_code'],
-            'status' => 1,
         ]);
-
-        $info['first_name'] = $data['first_name'];
-        $info['last_name'] = $data['last_name'];
-        $info['type'] = 'patient';
-        $info['user_id'] = $user->id;
-        UserInfo::query()->create($info);
-
-        if(isset(data['clinic_admin'])){
-            $user->assignRole('clinic admin');
-            $user->update(['reference_id'=>$user->id]);
-        }else{
-            $user->assignRole('patient');
-        }
-
-        return $user;
     }
 }

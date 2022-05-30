@@ -5,7 +5,8 @@
 @section('panel-title')Company Settings @stop
 @section('content')
     <div class="col-6">
-        {{ Form::model($company,['route'=>['company.update'],'method'=>'post','files'=>true]) }}
+        {{ Form::model($company,['route'=>['company.update', $company->id],'method'=>'post','files'=>true]) }}
+
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="btn-primary btn btn-block text-center text-uppercase"> Profile Settings </h1>
@@ -69,7 +70,7 @@
 
             <div class="col-lg-4 col-sm-12 {{$errors->has('address') ? 'has-error' : ''}}">
                 {{ Form::label('','Company Address : ',['class'=>'control-label'])}}
-                {{ Form::textarea('address',old('address'),['class'=>'form-control',"row"=>"2"])}}
+                {{ Form::text('address',old('address'),['class'=>'form-control'])}}
                 @if ($errors->has('address'))
                     <span class="help-block">
                          <strong>{{ $errors->first('address') }}</strong>
@@ -81,7 +82,7 @@
 
             <div class="col-lg-6 col-sm-12 {{$errors->has('about') ? 'has-error' : ''}}">
                 {{ Form::label('','About Company : ',['class'=>'control-label'])}}
-                {{ Form::textarea('about',old('address'),['class'=>'form-control',"id"=>"demo-summernote"])}}
+                {{ Form::textarea('about',old('address'),['class'=>'form-control ',"id"=>"demo-summernote","row"=>"5"])}}
                 @if ($errors->has('about'))
                     <span class="help-block">
                          <strong>{{ $errors->first('about') }}</strong>
@@ -92,7 +93,7 @@
 
             <div class="col-lg-6 col-sm-12 {{$errors->has('about_footer') ? 'has-error' : ''}}">
                 {{ Form::label('','About Company for Footer : ',['class'=>'control-label'])}}
-                {{ Form::textarea('about_footer',old('about_footer'),['class'=>'form-control',"id"=>"demo-summernote"])}}
+                {{ Form::textarea('about_footer',old('about_footer'),['class'=>'form-contro',"id"=>"demo-summernote"])}}
                 @if ($errors->has('about_footer'))
                     <span class="help-block">
                          <strong>{{ $errors->first('about_footer') }}</strong>
@@ -143,11 +144,11 @@
 
 
             <div class="col-lg-3 col-sm-4 {{$errors->has('whatsapp') ? 'has-error' : ''}}">
-                {{ Form::label('','WhatsApp: ',['class'=>'control-label'])}}
-                {{ Form::text('whatsapp',old('whatsapp'),['class'=>'form-control','placeholder'=>'Social'])}}
-                @if ($errors->has('whatsapp'))
+                {{ Form::label('','Youtube: ',['class'=>'control-label'])}}
+                {{ Form::text('youtube',old('youtube'),['class'=>'form-control','placeholder'=>'Social'])}}
+                @if ($errors->has('youtube'))
                     <span class="help-block">
-                         <strong>{{ $errors->first('whatsapp') }}</strong>
+                         <strong>{{ $errors->first('youtube') }}</strong>
                     </span>
                 @endif
                 <br>
@@ -163,7 +164,7 @@
 
             <div class="col-lg-3 col-sm-4 {{$errors->has('logo') ? 'has-error' : ''}}">
                 {{ Form::label('','Menu Logo : ',['class'=>'control-label'])}}
-                {{ Form::file('logo',['class'=>'form-control',"accept"=>"image/*"])}}
+                {{ Form::file('logo[]',['class'=>'form-control',"accept"=>"image/*"])}}
                 @if ($errors->has('logo'))
                     <span class="help-block">
                          <strong>{{ $errors->first('logo') }}</strong>
@@ -177,7 +178,7 @@
 
             <div class="col-lg-3 col-sm-4 {{$errors->has('favicon') ? 'has-error' : ''}}">
                 {{ Form::label('','Title bar icon : ',['class'=>'control-label'])}}
-                {{ Form::file('favicon',['class'=>'form-control',"accept"=>"image/*"])}}
+                {{ Form::file('favicon[]',['class'=>'form-control',"accept"=>"image/*"])}}
                 @if ($errors->has('favicon'))
                     <span class="help-block">
                          <strong>{{ $errors->first('favicon') }}</strong>
@@ -191,7 +192,7 @@
 
             <div class="col-lg-3 col-sm-4 {{$errors->has('mobile_logo') ? 'has-error' : ''}}">
                 {{ Form::label('','Mobile Logo : ',['class'=>'control-label'])}}
-                {{ Form::file('mobile_logo',['class'=>'form-control',"accept"=>"image/*"])}}
+                {{ Form::file('mobile_logo[]',['class'=>'form-control',"accept"=>"image/*"])}}
                 @if ($errors->has('mobile_logo'))
                     <span class="help-block">
                          <strong>{{ $errors->first('mobile_logo') }}</strong>
@@ -205,7 +206,7 @@
 
             <div class="col-lg-3 col-sm-4 {{$errors->has('footer_logo') ? 'has-error' : ''}}">
                 {{ Form::label('','Footer Logo : ',['class'=>'control-label'])}}
-                {{ Form::file('footer_logo',['class'=>'form-control',"accept"=>"image/*"])}}
+                {{ Form::file('footer_logo[]',['class'=>'form-control',"accept"=>"image/*"])}}
                 @if ($errors->has('footer_logo'))
                     <span class="help-block">
                          <strong>{{ $errors->first('footer_logo') }}</strong>
@@ -224,7 +225,7 @@
 
             <div class="col-lg-6 col-sm-12 {{$errors->has('privacy_policy') ? 'has-error' : ''}}">
                 {{ Form::label('','Privacy Policy : ',['class'=>'control-label'])}}
-                {{ Form::textarea('privacy_policy',old('privacy_policy'),['class'=>'form-control',"id"=>"demo-summernote"])}}
+                {{ Form::textarea('privacy_policy',old('privacy_policy'),['class'=>'form-control summernote',"id"=>"demo-summernote"])}}
                 @if ($errors->has('privacy_policy'))
                     <span class="help-block">
                          <strong>{{ $errors->first('privacy_policy') }}</strong>
@@ -235,7 +236,7 @@
 
             <div class="col-lg-6 col-sm-12 {{$errors->has('terms_condition') ? 'has-error' : ''}}">
                 {{ Form::label('','Terms & Conditions : ',['class'=>'control-label'])}}
-                {{ Form::textarea('terms_condition',old('terms_condition'),['class'=>'form-control',"id"=>"demo-summernote"])}}
+                {{ Form::textarea('terms_condition',old('terms_condition'),['class'=>'form-control summernote',"id"=>"demo-summernote"])}}
                 @if ($errors->has('terms_condition'))
                     <span class="help-block">
                          <strong>{{ $errors->first('terms_condition') }}</strong>
