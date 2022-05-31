@@ -82,6 +82,7 @@ Route::get('reboot',function(){
     \Illuminate\Support\Facades\Artisan::call('route:clear');
     \Illuminate\Support\Facades\Artisan::call('view:clear');
     \Illuminate\Support\Facades\Artisan::call('cache:clear');
+    \Illuminate\Support\Facades\Artisan::call('config:clear');
     \Illuminate\Support\Facades\Artisan::call('config:cache');
     dd('Web site Refreshed!  Please, Go back :)');
 });
