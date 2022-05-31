@@ -37,8 +37,8 @@ Route::get('logout', function () {
 
 //});
 
-//Auth::routes();
-Route::/*middleware([ 'middleware' => 'auth'])->*/prefix('home')->group(function () {
+Auth::routes();
+Route::middleware([ 'middleware' => 'auth'])->prefix('home')->group(function () {
 Route::get('/', 'HomeController@index')->name('home');
     Route::get('/profile', 'UserController@profile')->name('profile');
 

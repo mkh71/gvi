@@ -16,6 +16,7 @@ class HomeController extends Controller
 
     public function index() {
         $records = [];
-        return view('backend.dashboard', compact('records'));
+        return redirect(route('company.index'));
+        //return view('backend.dashboard', compact('records'));
     }
 }

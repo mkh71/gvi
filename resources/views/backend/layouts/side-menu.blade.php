@@ -76,12 +76,12 @@
 {{--                            </ul>--}}
 {{--                        </li>--}}
 
-                        <li class="{{ request()->is('home/company/*') ? "active" : "" }}">
-                            <a href="{{route('company.index')}}">
-                                <i class="demo-pli-folder-organizing"></i>
-                                <span class="menu-title">Company Settings</span>
-                            </a>
-                        </li>
+{{--                        <li class="{{ request()->is('home/company/*') ? "active" : "" }}">--}}
+{{--                            <a href="{{route('company.index')}}">--}}
+{{--                                <i class="demo-pli-folder-organizing"></i>--}}
+{{--                                <span class="menu-title">Company Settings</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li class="{{ request()->is('home/slider-management/sliders/*') ? "active" : "" }}">
                             <a href="{{route('sliders.index')}}">
                                 <i class="demo-pli-split-vertical-2"></i>
