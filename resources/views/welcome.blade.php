@@ -54,7 +54,7 @@
                 @foreach($data['categories'] as $category)
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="item">
-                        <img src="{{asset('storage/'.$category->image)}}" alt="{{$category->name}}" class="img-fluid">
+                        <img src="{{base_path('storage/'.$category->image)}}" alt="{{$category->name}}" class="img-fluid">
                         <a href="{{ $category->back_link ?? "#" }}" class="overly">
                             <div class="overflow">
                                 <h3>{{$category->name}}</h3>
