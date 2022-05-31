@@ -274,7 +274,7 @@
                                 </h4>
                             </div>
 
-                            <div class="panel-body">
+                            <div class="panel-body" style="min-height: 350px">
                                 {{--Mid/main content--}}
                                 @yield('content')
                             </div>
