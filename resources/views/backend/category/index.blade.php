@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-lg-12 col-sm-12 {{$errors->has('name') ? 'has-error' : ''}}">
                     {{ Form::label('','Category Name : ',['class'=>'control-label'])}}
-                    {{ Form::text('name',old('name'),['class'=>'form-control','placeholder'=>'Eg: Face Care'])}}
+                    {{ Form::text('name',old('name'),['class'=>'form-control','placeholder'=>'Eg: Face Care', 'required'=>'required'])}}
                     @if ($errors->has('name'))
                         <span class="help-block">
                              <strong>{{ $errors->first('name') }}</strong>
