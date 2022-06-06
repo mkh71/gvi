@@ -30,7 +30,7 @@ Route::controller('FrontController')->group(function () {
     Route::get('/contact-us', 'contact')->name('contactUs');
     Route::get('/our-brands', 'brands')->name('brands');
     Route::get('/category', 'categories')->name('category');
-    Route::get('/flagship-outlets', 'flasgship')->name('flagship');
+    Route::get('/flagship-outlets', 'flagship')->name('flagship');
     Route::get('/gallery', 'gallery')->name('gallery');
     Route::get('/career', 'career')->name('career');
 });

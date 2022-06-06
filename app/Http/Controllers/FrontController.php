@@ -15,7 +15,8 @@ class FrontController extends Controller
         $company = company();
         $data['slider'] = Slider::query()->limit(8)->get();
         $data['categories'] = Category::query()->limit(6)->get();
-        $data['brands'] = Brand::query()->where('type', 'Our Brands')->limit(12)->get();
+        $data['brands'] = Brand::query()->where('type', 'Our Brands')->get();
+        $data['image'] = PageImage::query()->latest()->first();
         return view('welcome', compact('data', 'company'));
     }
 
@@ -34,7 +35,7 @@ class FrontController extends Controller
         return view('about', compact('data'));
     }
 
-    public function flasgship(){
+    public function flagship(){
         $data = Flagship::all();
         return view('flagship', compact('data'));
     }
@@ -45,5 +46,9 @@ class FrontController extends Controller
     }
     public function career(){
         return view('career');
+    }
+    public function contact(){
+        $data = PageImage::query()->latest()->first();
+        return view('contact' ,compact('data'));
     }
 }

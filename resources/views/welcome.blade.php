@@ -28,7 +28,7 @@
                 <div class="col-md-6">
                     <div class="greeting-content">
                         <span class="text-uppercase d-flex">WELCOME TO Global Village International</span>
-                        <img src="{{asset('assets')}}/img/greeting.jpg" alt="" class="img-fluid d-block d-md-none pt-50">
+                        <img src="{{asset('storage/'.$data['image']->home)}}" alt="" class="img-fluid d-block d-md-none pt-50">
                         <h2>Your Partner for Premium Beauty Brands</h2>
                         <p>{!! substr(company()->about, 0, 500)  !!} </p>
                         <a href="{{route('aboutUs')}}">LEARN MORE</a>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-6 d-none d-md-block">
                     <div class="greeting-img">
-                        <img src="{{asset('assets')}}/img/greeting.jpg" alt="" class="img-fluid">
+                        <img src="{{asset('storage/'.$data['image']->home)}}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="item">
                         <img src="{{asset('storage/'.$category->image)}}" alt="{{$category->name}}" class="img-fluid">
-                        <a href="{{ $category->back_link ?? "#" }}" class="overly">
+                        <a href="{{ $category->back_link ?? "#" }}" class="overly" target="_blank">
                             <div class="overflow">
                                 <h3>{{$category->name}}</h3>
                                 <p>
@@ -81,7 +81,11 @@
             <div class="swiper brand-slider">
                 <div class="swiper-wrapper">
                     @foreach($data['brands'] as $brand)
-                    <div class="item swiper-slide"><a href="{{ $brand->back_link }}"><img src="{{ asset('storage/'.$brand->image) }}" alt="{{ $brand->name }}" class="img-fluid"></a></div>
+                    <div class="item swiper-slide">
+                        <a href="{{ $brand->back_link }}" target="_blank">
+                            <img src="{{ asset('storage/'.$brand->image) }}" alt="{{ $brand->name }}" class="img-fluid">
+                        </a>
+                    </div>
                     @endforeach
                 </div>
             </div>

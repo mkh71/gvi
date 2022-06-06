@@ -4,7 +4,7 @@
     <!-- ==================== BANNER SECTION ==================== -->
     <section class="container">
         <div class="container-banner">
-            <img src="{{asset('assets/')}}/img/about-banner.jpeg" alt="" class="img-fluid">
+            <img src="{{asset('storage/'.$data->about)}}" alt="" class="img-fluid">
         </div>
     </section>
     <!-- ==================== BANNER SECTION END ==================== -->
@@ -12,7 +12,7 @@
     <!-- ==================== ABOUT SECTION ==================== -->
     <section class="about-section">
         <div class="container">
-            <div class="about-img"><img src="{{asset('assets/')}}/img/logo/logo-b.png" alt=""></div>
+            <div class="about-img"><img src="{{asset('storage/'.company()->logo)}}" alt=""></div>
             <p>{!! company()->about !!}</p>
         </div>
     </section>
@@ -156,13 +156,13 @@
         <div class="container">
             <div class="item">
                 <a href="" class="inner">
-                    <img src="{{asset('assets/')}}/img/training-1.png" alt="">
+                    <img src="{{asset('storage/'.$data->sales)}}" alt="">
                     <h4>SALES TRAINING</h4>
                 </a>
             </div>
             <div class="item">
                 <a href="" class="inner">
-                    <img src="{{asset('assets/')}}/img/training-2.png" alt="">
+                    <img src="{{asset('storage/'.$data->beauty)}}" alt="">
                     <h4>SALES TRAINING</h4>
                 </a>
             </div>
