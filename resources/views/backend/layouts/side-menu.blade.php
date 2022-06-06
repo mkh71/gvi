@@ -68,7 +68,7 @@
 {{--                            </a>--}}
 {{--                            <!--Submenu-->--}}
 {{--                            <ul class="collapse">--}}
-{{--                                <li class="{{ request()->is('home/category-management/categories/*') ? "active" : "" }}">--}}
+{{--                                <li class="{{ request()->is('home/category-management/categories/*') ? "active active-sub" : "" }}">--}}
 {{--                                    <a class="menu-item" href="{{route('categories.index')}}">--}}
 {{--                                        <i class="fa fa-check-circle"></i> Category--}}
 {{--                                    </a>--}}
@@ -76,22 +76,40 @@
 {{--                            </ul>--}}
 {{--                        </li>--}}
 
-{{--                        <li class="{{ request()->is('home/company/*') ? "active" : "" }}">--}}
+{{--                        <li class="{{ request()->is('home/company/*') ? "active active-sub" : "" }}">--}}
 {{--                            <a href="{{route('company.index')}}">--}}
 {{--                                <i class="demo-pli-folder-organizing"></i>--}}
 {{--                                <span class="menu-title">Company Settings</span>--}}
 {{--                            </a>--}}
 {{--                        </li>--}}
-                        <li class="{{ request()->is('home/slider-management/sliders/*') ? "active" : "" }}">
+                        <li class="{{ request()->is('home/slider-management/*') ? "active active-sub" : "" }}">
                             <a href="{{route('sliders.index')}}">
                                 <i class="demo-pli-split-vertical-2"></i>
                                 <span class="menu-title">Sliders</span>
                             </a>
                         </li>
-                        <li class="{{ request()->is('home/category-management/categories/*') ? "active" : "" }}">
+                        <li class="{{ request()->is('home/category-management/*') ? "active active-sub" : "" }}">
                             <a href="{{route('categories.index')}}">
                                 <i class="demo-pli-data-settings"></i>
-                                <span class="menu-title">Category</span>
+                                <span class="menu-title">Categories</span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('home/brand-management/*') ? "active active-sub" : "" }}">
+                            <a href="{{route('brands.index')}}">
+                                <i class="demo-pli-data-settings"></i>
+                                <span class="menu-title">Brands</span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('home/image-management/*') ? "active active-sub" : "" }}">
+                            <a href="{{route('images.index')}}">
+                                <i class="demo-pli-data-settings"></i>
+                                <span class="menu-title">Page Images</span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('home/flagship-management/*') ? "active active-sub" : "" }}">
+                            <a href="{{route('flagships.index')}}">
+                                <i class="demo-pli-data-settings"></i>
+                                <span class="menu-title">Flagships</span>
                             </a>
                         </li>
 

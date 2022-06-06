@@ -23,24 +23,22 @@ Route::get('logout', function () {
 })->name('logout');
 
 
-//Route::group(function (){
+Route::controller('FrontController')->group(function () {
+    Route::get('/', 'index')->name('/');
 
-    Route::get('/', 'FrontController@index')->name('/');
-
-    Route::get('/about-us', function () { return view('about'); })->name('aboutUs');
-    Route::get('/contact-us', function () { return view('contact'); })->name('contactUs');
-    Route::get('/our-brands', function () { return view('brands'); })->name('brands');
-    Route::get('/category', function () { return view('category'); })->name('category');
-    Route::get('/flagship-outlets', function () { return view('flagship'); })->name('flagship');
-    Route::get('/gallery', function () { return view('gallery'); })->name('gallery');
-    Route::get('/career', function () { return view('career'); })->name('career');
-
-//});
+    Route::get('/about-us', 'aboutUs')->name('aboutUs');
+    Route::get('/contact-us', 'contact')->name('contactUs');
+    Route::get('/our-brands', 'brands')->name('brands');
+    Route::get('/category', 'categories')->name('category');
+    Route::get('/flagship-outlets', 'flasgship')->name('flagship');
+    Route::get('/gallery', 'gallery')->name('gallery');
+    Route::get('/career', 'career')->name('career');
+});
 
 Auth::routes();
 Route::middleware([ 'middleware' => 'auth'])->prefix('home')->group(function () {
 Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/profile', 'UserController@profile')->name('profile');
+    Route::get('/profile', 'HomeController@profile')->name('profile');
 
     Route::prefix('company')->group(function () {
         Route::get('/', 'WebController@companyindex')->name('company.index');
@@ -52,6 +50,17 @@ Route::get('/', 'HomeController@index')->name('home');
 
     Route::prefix('category-management')->group(function () {
         Route::resource('categories', 'CategoryController');
+    });
+
+    Route::prefix('brand-management')->group(function () {
+        Route::resource('brands', 'BrandController');
+    });
+    Route::prefix('flagship-management')->group(function () {
+        Route::resource('flagships', 'FlagshipController');
+    });
+
+    Route::prefix('image-management')->group(function () {
+        Route::resource('images', 'PageImageController');
     });
 
     Route::post('changeStatus', function (Illuminate\Http\Request $request){
@@ -85,4 +94,9 @@ Route::get('reboot',function(){
     \Illuminate\Support\Facades\Artisan::call('config:clear');
     \Illuminate\Support\Facades\Artisan::call('config:cache');
     dd('Web site Refreshed!  Please, Go back :)');
+});
+
+Route::get('migrate',function(){
+    \Illuminate\Support\Facades\Artisan::call('migrate');
+    return redirect()->back();
 });

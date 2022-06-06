@@ -19,4 +19,8 @@ class HomeController extends Controller
         return redirect(route('company.index'));
         //return view('backend.dashboard', compact('records'));
     }
+
+    public function profile(){
+        return redirect()->back()->with('warning', 'Feature is Coming soon');
+    }
 }

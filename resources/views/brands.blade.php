@@ -9,42 +9,13 @@
         </div>
         <div class="container">
             <div class="row">
+                @foreach($data->where('type', 'Our Brands') as $brand)
                 <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/01.jpg" alt="" class="img-fluid"></a>
+                    <a href="{{$brand->back_link}}" class="item" target="_blank">
+                        <img src="{{asset('storage/'.$brand->image)}}" alt="" class="img-fluid">
+                    </a>
                 </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/02.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/03.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/04.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/05.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/06.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/07.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/08.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/09.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/10.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/11.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/12.jpg" alt="" class="img-fluid"></a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -57,42 +28,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/01.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/02.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/03.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/04.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/05.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/06.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/07.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/08.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/09.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/10.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/11.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/12.jpg" alt="" class="img-fluid"></a>
-                </div>
+                @foreach($data->where('type', 'Online Partner') as $brand)
+                    <div class="col-md-2">
+                        <a href="{{$brand->back_link}}" class="item" target="_blank">
+                            <img src="{{asset('storage/'.$brand->image)}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -105,42 +47,13 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/01.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/02.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/03.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/04.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/05.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/06.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/07.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/08.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/09.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/10.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/11.jpg" alt="" class="img-fluid"></a>
-                </div>
-                <div class="col-md-2">
-                    <a href="" class="item"><img src="{{asset('assets/')}}/img/brand/12.jpg" alt="" class="img-fluid"></a>
-                </div>
+                @foreach($data->where('type', 'Modern Trade') as $brand)
+                    <div class="col-md-2">
+                        <a href="{{$brand->back_link}}" class="item" target="_blank">
+                            <img src="{{asset('storage/'.$brand->image)}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

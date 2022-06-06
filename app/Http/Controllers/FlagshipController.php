@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
+use App\Flagship;
 use Illuminate\Http\Request;
 
-class BrandController extends Controller
+class FlagshipController extends Controller
 {
+
     public function index()
     {
-        $data = Brand::query()->orderBy('status', "desc")->get();
+        $data = Flagship::query()->where('status', 1)->get();
 
-        return view('backend.brand.index', compact('data'));
+        return view('backend.flagship.index', compact('data'));
     }
 
     public function create(Request $request)
@@ -22,14 +23,16 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         $input = $request->except('image');
+
         if($request->has('image')){
             foreach($request->image as $img){
-                $url = uploadFile('brand', $img);
+                $url = uploadFile('Flagship', $img);
             }
             $input['image'] = $url;
         }
-        Brand::query()->create($input);
-        return redirect()->back()->with('success', 'Brand has been stored successfully');
+
+        Flagship::query()->create($input);
+        return redirect()->back()->with('success', 'Flagship has been stored successfully');
     }
 
     public function show($id)
@@ -39,17 +42,17 @@ class BrandController extends Controller
 
     public function edit($id)
     {
-        $data = Brand::query()->find($id);
-        return view('backend.brand.edit', compact('data'));
+        $data = Flagship::query()->find($id);
+        return view('backend.flagship.edit', compact('data'));
     }
 
     public function update(Request $request, $id)
     {
-        $info = Brand::query()->find($id);
+        $info = Flagship::query()->find($id);
         $input = $request->except('image');
         if($request->has('image')){
             foreach($request->image as $img){
-                $url = uploadFile('category', $img);
+                $url = uploadFile('Flagship', $img);
             }
             $input['image'] = $url;
 
@@ -57,12 +60,6 @@ class BrandController extends Controller
             destroyImage($image);
         }
         $info->update($input);
-        return redirect()->route('brands.index')->with('success', 'brand has been updated successfully');
-    }
-
-
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('flagships.index')->with('success', 'Flagship has been updated successfully');
     }
 }

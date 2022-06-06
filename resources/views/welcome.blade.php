@@ -80,18 +80,9 @@
             </div>
             <div class="swiper brand-slider">
                 <div class="swiper-wrapper">
-                    <div class="item swiper-slide"><a href="https://www.flormar.com/"><img src="{{asset('assets')}}/img/brand/01.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="http://clarissinc.com/"><img src="{{asset('assets')}}/img/brand/02.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/RSOLIVEOIL"><img src="{{asset('assets')}}/img/brand/03.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/armaf.deo"><img src="{{asset('assets')}}/img/brand/04.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/layerrshotbd/"><img src="{{asset('assets')}}/img/brand/05.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/clarissbangladesh"><img src="{{asset('assets')}}/img/brand/06.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.luvit.com.bd/brand/Colour-Me-tF8AY"><img src="{{asset('assets')}}/img/brand/07.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/Themanclubofficial"><img src="{{asset('assets')}}/img/brand/08.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/layerrwottagirl.bd"><img src="{{asset('assets')}}/img/brand/09.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.luvit.com.bd/category/fragrances-j9g8n"><img src="{{asset('assets')}}/img/brand/10.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/redhuntbd"><img src="{{asset('assets/')}}/img/brand/11.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="item swiper-slide"><a href="https://www.facebook.com/elavista.bd"><img src="{{asset('assets/')}}/img/brand/12.jpg" alt="" class="img-fluid"></a></div>
+                    @foreach($data['brands'] as $brand)
+                    <div class="item swiper-slide"><a href="{{ $brand->back_link }}"><img src="{{ asset('storage/'.$brand->image) }}" alt="{{ $brand->name }}" class="img-fluid"></a></div>
+                    @endforeach
                 </div>
             </div>
         </div>

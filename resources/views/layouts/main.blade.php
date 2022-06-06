@@ -49,7 +49,7 @@
                         <div class="d-block d-lg-none">
                             <button class="menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar"><i class="fa-solid fa-bars"></i></button>
                         </div>
-                        <div class="logo-img"><a href="{{route('/')}}"><img class="img-fluid" src="{{asset('assets')}}/img/logo/logo-b.png" alt=""></a></div>
+                        <div class="logo-img"><a href="{{route('/')}}"><img class="img-fluid" src="{{asset('storage/'.company()->logo)}}" alt=""></a></div>
                     </div>
                     <div class="col-md-8 col-12">
                         <form id="search-form" action="">
@@ -187,12 +187,13 @@
     <!-- ==================== FOOTER SECTION ==================== -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo mx-md-auto"><a href="index.html"><img src="{{asset('assets')}}/img/logo/logo-w.png" alt="" class="img-fluid"></a></div>
+            <div class="footer-logo mx-md-auto"><a href="index.html"><img src="{{asset('storage/'.company()->footer_logo)}}" alt="" class="img-fluid"></a></div>
             <div class="footer-social">
                 <ul class="d-flex justify-content-md-center">
-                    <li><a class="item" href="https://www.facebook.com/gvibd"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a class="item" href=""><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a class="item" href=""><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a class="item" href="{{company()->facebook}}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a class="item" href="{{company()->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a class="item" href="{{company()->youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a class="item" href="{{company()->twitter}}" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
                 </ul>
             </div>
             <div class="footer-link">

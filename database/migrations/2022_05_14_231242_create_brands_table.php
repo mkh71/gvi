@@ -19,8 +19,9 @@ class CreateBrandsTable extends Migration
             $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->string('back_link')->nullable();
+            $table->string('type')->nullable();
             $table->string('seo_keyword')->nullable();
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
