@@ -21,7 +21,7 @@ class FrontController extends Controller
 
     public function categories(){
         $data = Category::all();
-        return view('categories', compact('data'));
+        return view('category', compact('data'));
     }
 
     public function brands(){
