@@ -5,7 +5,7 @@
     <!-- ==================== BANNER SECTION ==================== -->
     <section class="container">
         <div class="container-banner">
-            <img src="{{asset('assets/')}}/img/contact-banner.jpg" alt="" class="w-100">
+            <img src="{{asset('storage/'.$data->contact)}}" alt="" class="w-100">
         </div>
     </section>
     <!-- ==================== BANNER SECTION END ==================== -->

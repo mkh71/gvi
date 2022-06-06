@@ -46,4 +46,8 @@ class FrontController extends Controller
     public function career(){
         return view('career');
     }
+    public function contact(){
+        $data = PageImage::query()->latest()->first();
+        return view('contact' ,compact('data'));
+    }
 }
