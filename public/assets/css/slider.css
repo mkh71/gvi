@@ -1,0 +1,104 @@
+/* SCROLL */
+.scroll_section {
+  position: relative;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.scroll_container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.scroll_item {
+  flex: 0 0 auto;
+  padding: 0 10px;
+  width: 33.33%; 
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .scroll_item{
+    width: 50% !important;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .scroll_item{
+    width: 100% !important;
+  }
+}
+.scroll_container::-webkit-scrollbar {
+  display: none;
+}
+.scroll_section button {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  opacity: 0.4;
+  height: 30px;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+}
+.scroll_section button:hover {
+  opacity: 1;
+}
+.scroll_section button img {
+  height: 100%;
+}
+.pre_btn {
+  left: 0;
+}
+.nxt_btn {
+  right: 0;
+}
+/* SLIDER */
+.slider_inner {
+  width: 100%;
+  overflow: hidden;
+}
+.slider_inner::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.slide_item {
+  position: relative;
+  float: left;
+  display: none;
+  width: 100%;
+  margin-right: -100%;
+  overflow: hidden;
+}
+
+/* SLIDER EFFECT */
+.slide_item_active,
+.slide_item_pos_next {
+  display: block;
+}
+.slide_item_pos_next {
+  left: 100%;
+}
+.slide_item_next {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* SLIDER PAGINATION */
+.slider_pagination {
+  width: 100%;
+  padding: 5px;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+}
+.pagination_icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: rgba(27, 11, 12, 0.2);
+  transition: background-color 0.35s;
+}
+.pagination_active {
+  background-color: #f16f24;
+  transition: background-color 0.35s;
+}
