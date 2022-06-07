@@ -22,6 +22,7 @@ class CreatePageImagesTable extends Migration
             $table->string('beauty')->nullable();
             $table->timestamps();
         });
+        \App\PageImage::query()->create(['id'=>1]);
     }
 
     /**
