@@ -10,6 +10,9 @@
     <!-- ========== ICON ========== -->
     <link rel="icon" href="{{ asset('storage/' . company()->favicon) }}">
 
+    <!-- ========== INITIALIZE SWIPER ========== -->
+    <script src="{{ url('assets/js/slider.js') }}"></script>
+
     <!-- ========== BOOTSTRAP LINK ========== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
         crossorigin="anonymous">
@@ -150,9 +153,7 @@
     <!-- ========== SWIPER JS SCRIPT LINK ========== -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
-     <script src="{{ url('/assets/js/venobox.min.js') }}"></script>
-    <!-- ========== INITIALIZE SWIPER ========== -->
-     <script src="{{ url('assets/js/slider.js') }}"></script>
+    <script src="{{ url('/assets/js/venobox.min.js') }}"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
     <script>
         var swiper = new Swiper(".banner-slider", {
