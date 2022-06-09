@@ -121,7 +121,7 @@
                 </div>
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
-            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right.svg" alt=""></button>
+            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
         </div>
     </section>
     <!-- ==================== NATIONAL SECTION END ==================== -->
@@ -240,7 +240,7 @@
                 </div>
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
-            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right.svg" alt=""></button>
+            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
         </div>
     </section>
     <!-- ==================== ANNUAL SECTION END ==================== -->
@@ -359,7 +359,7 @@
                 </div>
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
-            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right.svg" alt=""></button>
+            <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
         </div>
     </section>
     <!-- ==================== DITF SECTION END ==================== -->

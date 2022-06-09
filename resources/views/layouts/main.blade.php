@@ -150,7 +150,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
     <script src="{{ asset('js/venobox.min.js') }}"></script>
-    <script src="{{ asset('js/slider.min.js') }}"></script>
+    <script src="{{ asset('js/slider.js') }}"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
     <script>
         var swiper = new Swiper(".banner-slider", {

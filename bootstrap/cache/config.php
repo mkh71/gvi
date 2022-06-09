@@ -1,16 +1,16 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'GVI',
+    'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'localhost',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:gEnMA16rhG8LxLmJiwnEExmwVryHMNcsJDLgtnvKEmg=',
+    'key' => 'base64:sviJZ5ftfOUrsW7TJXBBDla1ma24YWJ/eMMx44tv1Tc=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -186,7 +186,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'K:\\Laragon\\www\\gvi\\storage\\framework/cache/data',
+        'path' => 'C:\\laragon\\www\\gvi\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -219,14 +219,14 @@
       'dynamodb' => 
       array (
         'driver' => 'dynamodb',
-        'key' => NULL,
-        'secret' => NULL,
+        'key' => '',
+        'secret' => '',
         'region' => 'us-east-1',
         'table' => 'cache',
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'gvi_cache',
+    'prefix' => 'laravel_cache',
   ),
   'cors' => 
   array (
@@ -325,7 +325,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'gvi_database_',
+        'prefix' => 'laravel_database_',
       ),
       'default' => 
       array (
@@ -403,29 +403,29 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'K:\\Laragon\\www\\gvi\\storage\\app',
+        'root' => 'C:\\laragon\\www\\gvi\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'K:\\Laragon\\www\\gvi\\storage\\app/public',
-        'url' => 'localhost/storage',
+        'root' => 'C:\\laragon\\www\\gvi\\storage\\app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
       's3' => 
       array (
         'driver' => 's3',
-        'key' => NULL,
-        'secret' => NULL,
-        'region' => NULL,
-        'bucket' => NULL,
+        'key' => '',
+        'secret' => '',
+        'region' => 'us-east-1',
+        'bucket' => '',
         'url' => NULL,
         'endpoint' => NULL,
       ),
     ),
     'links' => 
     array (
-      'K:\\Laragon\\www\\gvi\\public\\storage' => 'K:\\Laragon\\www\\gvi\\storage\\app/public',
+      'C:\\laragon\\www\\gvi\\public\\storage' => 'C:\\laragon\\www\\gvi\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -483,13 +483,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'K:\\Laragon\\www\\gvi\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\gvi\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'K:\\Laragon\\www\\gvi\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\gvi\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -540,7 +540,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'K:\\Laragon\\www\\gvi\\storage\\logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\gvi\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -552,11 +552,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.gmail.com',
-        'port' => '587',
-        'encryption' => 'tls',
-        'username' => 'support@gvi.com',
-        'password' => 'tbnjeixztiflqeox',
+        'host' => 'mailhog',
+        'port' => '1025',
+        'encryption' => NULL,
+        'username' => NULL,
+        'password' => NULL,
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -589,15 +589,15 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
-      'name' => 'Example',
+      'address' => NULL,
+      'name' => 'Laravel',
     ),
     'markdown' => 
     array (
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'K:\\Laragon\\www\\gvi\\resources\\views/vendor/mail',
+        0 => 'C:\\laragon\\www\\gvi\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -630,8 +630,8 @@
       'sqs' => 
       array (
         'driver' => 'sqs',
-        'key' => NULL,
-        'secret' => NULL,
+        'key' => '',
+        'secret' => '',
         'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
         'queue' => 'default',
         'suffix' => NULL,
@@ -669,8 +669,8 @@
     ),
     'ses' => 
     array (
-      'key' => NULL,
-      'secret' => NULL,
+      'key' => '',
+      'secret' => '',
       'region' => 'us-east-1',
     ),
   ),
@@ -680,7 +680,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'K:\\Laragon\\www\\gvi\\storage\\framework/sessions',
+    'files' => 'C:\\laragon\\www\\gvi\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -689,7 +689,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'gvi_session',
+    'cookie' => 'laravel_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,
@@ -718,9 +718,9 @@
   array (
     'paths' => 
     array (
-      0 => 'K:\\Laragon\\www\\gvi\\resources\\views',
+      0 => 'C:\\laragon\\www\\gvi\\resources\\views',
     ),
-    'compiled' => 'K:\\Laragon\\www\\gvi\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\gvi\\storage\\framework\\views',
   ),
   'flare' => 
   array (
