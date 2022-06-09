@@ -86,7 +86,6 @@ Route::get('/', 'HomeController@index')->name('home');
     })->name('delete');
 
 });
-
 Route::get('reboot',function(){
     \Illuminate\Support\Facades\Artisan::call('route:clear');
     \Illuminate\Support\Facades\Artisan::call('view:clear');
@@ -98,5 +97,10 @@ Route::get('reboot',function(){
 
 Route::get('migrate',function(){
     \Illuminate\Support\Facades\Artisan::call('migrate');
+    return redirect()->back();
+});
+
+Route::get('storage',function(){
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
     return redirect()->back();
 });

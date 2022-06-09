@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
-@section('title', "Categories")
-@section('top-title', "Categories")
-@section('page-title', "Categories")
-@section('panel-title', "Categories")
+@section('title', "Sliders")
+@section('top-title', "Sliders")
+@section('page-title', "Sliders")
+@section('panel-title', "Sliders")
 @section('content')
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -28,7 +28,7 @@
 
                 <div class="col-lg-12 col-sm-12 {{$errors->has('back_link') ? 'has-error' : ''}}">
                     {{ Form::label('','Back Link : ',['class'=>'control-label'])}}
-                    {{ Form::text('back_link',old('back_link'),['class'=>'form-control','placeholder'=>'Eg: https://www.xyz.com/category'])}}
+                    {{ Form::text('back_link',old('back_link'),['class'=>'form-control','placeholder'=>'Eg: https://www.xyz.com/sliders'])}}
                     @if ($errors->has('back_link'))
                         <span class="help-block">
                              <strong>{{ $errors->first('back_link') }}</strong>
