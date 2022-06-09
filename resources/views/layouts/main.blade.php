@@ -19,16 +19,12 @@
 
     <!-- ========== SWIPER JS LINK ========== -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- ========== FONT AWESOME LINK ========== -->
-    <link rel="stylesheet" href="{{ url('/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/plugins/fontawesome/css/all.min.css') }}">
     <script src="https://kit.fontawesome.com/272eed3989.js" crossorigin="anonymous"></script>
 
     <!-- ========== MAIN CSS ========== -->
-    <link rel="stylesheet" href="{{ url('/assets/css/venobox.min.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/slider.css') }}">
-    <link rel="stylesheet" href="{{ url('/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/venobox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slider.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
     @yield('css')
 </head>
 
@@ -153,7 +149,8 @@
     <!-- ========== SWIPER JS SCRIPT LINK ========== -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
-    <script src="{{ url('/assets/js/venobox.min.js') }}"></script>
+    <script src="{{ asset('js/venobox.min.js') }}"></script>
+    <script src="{{ asset('js/slider.min.js') }}"></script>
     <!-- ========== INITIALIZE SWIPER ========== -->
     <script>
         var swiper = new Swiper(".banner-slider", {
