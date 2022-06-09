@@ -29,7 +29,7 @@ class SliderController extends Controller
             Slider::query()->create($input);
         }
 
-        return redirect()->back()->with('success', 'Category has been stored successfully');
+        return redirect()->back()->with('success', 'Slider has been stored successfully');
     }
 
     public function show($id)
@@ -58,6 +58,6 @@ class SliderController extends Controller
             destroyImage($image);
         }
         $info->update($input);
-        return redirect()->route('sliders.index')->with('success', 'Category has been updated successfully');
+        return redirect()->route('sliders.index')->with('success', 'Slider has been updated successfully');
     }
 }

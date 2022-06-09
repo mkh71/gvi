@@ -60,28 +60,6 @@
                             </a>
                         </li>
 
-{{--                        <li class="{{ request()->is('auth/appointment-management/*') ? 'active-sub active':''}}">--}}
-{{--                            <a href="#">--}}
-{{--                                <i class="fa fa-clock-o"></i>--}}
-{{--                                <span class="menu-title">Category</span>--}}
-{{--                                <i class="arrow"></i>--}}
-{{--                            </a>--}}
-{{--                            <!--Submenu-->--}}
-{{--                            <ul class="collapse">--}}
-{{--                                <li class="{{ request()->is('home/category-management/categories/*') ? "active active-sub" : "" }}">--}}
-{{--                                    <a class="menu-item" href="{{route('categories.index')}}">--}}
-{{--                                        <i class="fa fa-check-circle"></i> Category--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-
-{{--                        <li class="{{ request()->is('home/company/*') ? "active active-sub" : "" }}">--}}
-{{--                            <a href="{{route('company.index')}}">--}}
-{{--                                <i class="demo-pli-folder-organizing"></i>--}}
-{{--                                <span class="menu-title">Company Settings</span>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
                         <li class="{{ request()->is('home/slider-management/*') ? "active active-sub" : "" }}">
                             <a href="{{route('sliders.index')}}">
                                 <i class="demo-pli-split-vertical-2"></i>
@@ -111,6 +89,50 @@
                                 <i class="demo-pli-data-settings"></i>
                                 <span class="menu-title">Flagships</span>
                             </a>
+                        </li>
+
+                        <li class="{{ request()->is('home/gallery-management/*') ? 'active-sub active':''}}">
+                            <a href="#">
+                                <i class="fa fa-clock-o"></i>
+                                <span class="menu-title">Gallery</span>
+                                <i class="arrow"></i>
+                            </a>
+                            <!--Submenu-->
+                            <ul class="collapse">
+                                <li class="">
+                                    <a class="menu-item" href="{{route('galleries.index', 'Head Office')}}">
+                                        <i class="fa fa-check-circle"></i> Head Office
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="collapse">
+                                <li class="">
+                                    <a class="menu-item" href="{{route('galleries.index', 'National Training')}}">
+                                        <i class="fa fa-check-circle"></i> National Training
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="collapse">
+                                <li class="">
+                                    <a class="menu-item" href="{{route('galleries.index', 'Annual Conference')}}">
+                                        <i class="fa fa-check-circle"></i> Annual Conference
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="collapse">
+                                <li class="">
+                                    <a class="menu-item" href="{{route('galleries.index', 'DITF Participation')}}">
+                                        <i class="fa fa-check-circle"></i> DITF Participation
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="collapse">
+                                <li class="">
+                                    <a class="menu-item" href="{{route('galleries.index', 'Magazine')}}">
+                                        <i class="fa fa-check-circle"></i> Magazine
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                     </ul>

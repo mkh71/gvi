@@ -129,12 +129,10 @@
                     <li><a class="item" href="{{ route('brands') }}">Brands</a></li>
                     <li><a class="item" href="{{ route('contactUs') }}">Contact Us</a></li>
                     <li><a class="item" href="{{ route('career') }}">Careers</a></li>
-                    <li><a class="item" href="">News</a></li>
-                    <li><a class="item" href="">Careers</a></li>
                 </ul>
             </div>
             <div class="footer-copyright">
-                <p>&copy;2022, GLOBAL VILLAGE INTERNATIONAL</p>
+                <p>&copy; {{date('Y')}}, GLOBAL VILLAGE INTERNATIONAL</p>
             </div>
         </div>
     </footer>
@@ -186,55 +184,6 @@
         });
 
 
-        new VenoBox({
-            selector: ".headOfficeImg"
-        });
-        new VenoBox({
-            selector: ".national1Img"
-        });
-        new VenoBox({
-            selector: ".annual1Img"
-        });
-        new VenoBox({
-            selector: ".ditf1Img"
-        });
-
-        var swiper = new Swiper(".headOffice-slider", {
-            slidesPerView: 1,
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }
-        });
-        var swiper = new Swiper(".magazine-section", {
-            slidesPerView: 1,
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 15,
-                },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            }
-        });
     </script>
     @yield('js')
 </body>

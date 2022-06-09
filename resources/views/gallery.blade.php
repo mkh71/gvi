@@ -9,18 +9,13 @@
         </div>
         <div class="swiper headOffice-slider">
             <div class="swiper-wrapper">
+                @foreach($data['ho'] as $ho)
                 <div class="item swiper-slide">
-                    <a class="headOfficeImg" data-gall="headOfficeGly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img class="img-fluid" src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
+                    <a class="headOfficeImg" data-gall="headOfficeGly" href="{{asset('storage/'.$ho->image)}}">
+                        <img class="img-fluid" src="{{asset('storage/'.$ho->image)}}" />
+                    </a>
                 </div>
-                <div class="item swiper-slide">
-                    <a class="headOfficeImg" data-gall="headOfficeGly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img class="img-fluid" src="{{asset('assets/')}}/img/galle2y/01.jpeg" /></a>
-                </div>
-                <div class="item swiper-slide">
-                    <a class="headOfficeImg" data-gall="headOfficeGly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img class="img-fluid" src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                </div>
-                <div class="item swiper-slide">
-                    <a class="headOfficeImg" data-gall="headOfficeGly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img class="img-fluid" src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                </div>
+                @endforeach
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -35,90 +30,29 @@
         </div>
         <div class="scroll_section" id="national-section">
             <div class="scroll_container">
-                <div onmouseenter="slider('national-slide-1')" class="section-item scroll_item">
-                    <h2>Chattogram <span>04/06/2019</span></h2>
-                    <div id="national-slide-1" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="national1Img" data-gall="national1Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
+                @foreach($data['nt'] as $l=>$ntLoc)
+                   @foreach($ntLoc as  $dt=>$ntDate)
+                    <div onmouseenter="slider('{{strtotime($dt)}}')" class="section-item scroll_item">
+                        <h2> {{$l}} <span>{{ date('d/m/Y', strtotime($dt)) }}</span></h2>
+                        <div id="{{strtotime($dt)}}" class="item slider">
+                            <div class="slider_inner">
+                                @foreach($ntDate as $dt)
+                                    @php($i = count($ntDate))
+                                <div class="slide_item slide_item_active">
+                                    <a class="national1Img" data-gall="national1Gly" href="{{asset('storage/'.$dt->image)}}"><img src="{{asset('storage/'.$dt->image)}}" /></a>
+                                </div>
+                                @endforeach
                             </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national1Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/galle2y/01.jpeg" /></a>
+                            <div class="slider_pagination">
+                                @for($x= 1; $x<= $i; $x++)
+                                    <div class="pagination_icon"></div>
+                                @endfor
                             </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national1Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
                         </div>
                     </div>
-                </div>
-                <div onmouseenter="slider('national-slide-2')" class="section-item scroll_item">
-                    <h2>Chattogram <span>04/06/2019</span></h2>
-                    <div id="national-slide-2" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="national1Img" data-gall="national2Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national2Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national2Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('national-slide-3')" class="section-item scroll_item">
-                    <h2>Dhaka <span>04/06/2019</span></h2>
-                    <div id="national-slide-3" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="national1Img" data-gall="national3Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national3Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national3Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('national-slide-4')" class="section-item scroll_item">
-                    <h2>Barisal <span>04/06/2019</span></h2>
-                    <div id="national-slide-4" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="national1Img" data-gall="national4Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national4Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="national1Img" data-gall="national4Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endforeach
+
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
             <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
@@ -133,111 +67,26 @@
         </div>
         <div class="scroll_section" id="annual-section">
             <div class="scroll_container">
-                <div onmouseenter="slider('annual-slide-1')" class="section-item scroll_item">
-                    <h2>2018</h2>
-                    <div id="annual-slide-1" class="item slider">
+                @foreach($data['ac'] as $ayk => $ay)
+                <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
+                    <h2>{{$ayk}}</h2>
+                    <div id="{{$ayk}}" class="item slider">
                         <div class="slider_inner">
+                            @foreach($ay as $ac)
+                                @php($i = count($ay))
                             <div class="slide_item slide_item_active">
-                                <a class="annual1Img" data-gall="annual1Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
+                                <a class="annual1Img" data-gall="annual1Gly" href="{{asset('storage/'.$ac->image)}}"><img src="{{asset('storage/'.$ac->image)}}" /></a>
                             </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual1Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual1Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="slider_pagination">
+                            @for($x= 1; $x<= $i; $x++)
                             <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
+                            @endfor
                         </div>
                     </div>
                 </div>
-                <div onmouseenter="slider('annual-slide-2')" class="section-item scroll_item">
-                    <h2>2019</h2>
-                    <div id="annual-slide-2" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="annual1Img" data-gall="annual2Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual2Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual2Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('annual-slide-3')" class="section-item scroll_item">
-                    <h2>2020</h2>
-                    <div id="annual-slide-3" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="annual1Img" data-gall="annual3Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual3Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual3Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('annual-slide-4')" class="section-item scroll_item">
-                    <h2>2021</h2>
-                    <div id="annual-slide-4" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="annual1Img" data-gall="annual4Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual4Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual4Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('annual-slide-5')" class="section-item scroll_item">
-                    <h2>2022</h2>
-                    <div id="annual-slide-5" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="annual1Img" data-gall="annual5Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual5Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="annual1Img" data-gall="annual5Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
             <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
@@ -252,111 +101,26 @@
         </div>
         <div class="scroll_section" id="ditf-section">
             <div class="scroll_container">
-                <div onmouseenter="slider('ditf-slide-1')" class="section-item scroll_item">
-                    <h2>2018</h2>
-                    <div id="ditf-slide-1" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="ditf1Img" data-gall="ditf1Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
+                @foreach($data['dp'] as $dpk => $dpy)
+                    <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
+                        <h2>{{$dpk}}</h2>
+                        <div id="{{$dpk}}" class="item slider">
+                            <div class="slider_inner">
+                                @foreach($dpy as $dp)
+                                    @php($i = count($dpy))
+                                    <div class="slide_item slide_item_active">
+                                        <a class="annual1Img" data-gall="annual1Gly" href="{{asset('storage/'.$dp->image)}}"><img src="{{asset('storage/'.$dp->image)}}" /></a>
+                                    </div>
+                                @endforeach
                             </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf1Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
+                            <div class="slider_pagination">
+                                @for($x= 1; $x<= $i; $x++)
+                                    <div class="pagination_icon"></div>
+                                @endfor
                             </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf1Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
                         </div>
                     </div>
-                </div>
-                <div onmouseenter="slider('ditf-slide-2')" class="section-item scroll_item">
-                    <h2>2019</h2>
-                    <div id="ditf-slide-2" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="ditf1Img" data-gall="ditf2Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf2Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf2Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('ditf-slide-3')" class="section-item scroll_item">
-                    <h2>2020</h2>
-                    <div id="ditf-slide-3" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="ditf1Img" data-gall="ditf3Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf3Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf3Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('ditf-slide-4')" class="section-item scroll_item">
-                    <h2>2021</h2>
-                    <div id="ditf-slide-4" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="ditf1Img" data-gall="ditf4Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf4Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf4Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
-                <div onmouseenter="slider('ditf-slide-5')" class="section-item scroll_item">
-                    <h2>2022</h2>
-                    <div id="ditf-slide-5" class="item slider">
-                        <div class="slider_inner">
-                            <div class="slide_item slide_item_active">
-                                <a class="ditf1Img" data-gall="ditf5Gly" href="{{asset('assets/')}}/img/gallery/01.jpeg"><img src="{{asset('assets/')}}/img/gallery/01.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf5Gly" href="{{asset('assets/')}}/img/gallery/02.jpeg"><img src="{{asset('assets/')}}/img/gallery/02.jpeg" /></a>
-                            </div>
-                            <div class="slide_item">
-                                <a class="ditf1Img" data-gall="ditf5Gly" href="{{asset('assets/')}}/img/gallery/03.jpeg"><img src="{{asset('assets/')}}/img/gallery/03.jpeg" /></a>
-                            </div>
-                        </div>
-                        <div class="slider_pagination">
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                            <div class="pagination_icon"></div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <button class="pre_btn"><img src="{{asset('assets/')}}/img/arrow/left_arrow.svg" alt=""></button>
             <button class="nxt_btn"><img src="{{asset('assets/')}}/img/arrow/right_arrow.svg" alt=""></button>
@@ -371,42 +135,12 @@
         </div>
         <div class="magazine-section swiper">
             <div class="swiper-wrapper">
+                @foreach($data['mg'] as $mg)
                 <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/megazine (1).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
+                    <img class="img-fluid" src="{{asset('storage/'.$mg->image)}}" alt="">
+                    <h2 class="text-center">{{$mg->title}}</h2>
                 </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (2).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (3).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (4).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (5).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (6).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (7).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (8).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
-                <div class="item swiper-slide">
-                    <img class="img-fluid" src="{{asset('assets/')}}/img/magazine/magazine (9).jpeg" alt="">
-                    <h2>MIRROR <span>May - 2022</span></h2>
-                </div>
+                @endforeach
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -417,4 +151,56 @@
 
 @stop
 @section('js')
+    <script>
+
+        new VenoBox({
+            selector: ".headOfficeImg"
+        });
+        new VenoBox({
+            selector: ".national1Img"
+        });
+        new VenoBox({
+            selector: ".annual1Img"
+        });
+        new VenoBox({
+            selector: ".ditf1Img"
+        });
+
+        var swiper = new Swiper(".headOffice-slider", {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+        var swiper = new Swiper(".magazine-section", {
+            slidesPerView: 1,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    </script>
 @stop

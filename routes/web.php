@@ -28,7 +28,7 @@ Route::controller('FrontController')->group(function () {
 
     Route::get('/about-us', 'aboutUs')->name('aboutUs');
     Route::get('/contact-us', 'contact')->name('contactUs');
-    Route::get('/our-brands', 'brands')->name('brands');
+    Route::get('/brands', 'brands')->name('brands');
     Route::get('/category', 'categories')->name('category');
     Route::get('/flagship-outlets', 'flagship')->name('flagship');
     Route::get('/gallery', 'gallery')->name('gallery');
@@ -61,6 +61,13 @@ Route::get('/', 'HomeController@index')->name('home');
 
     Route::prefix('image-management')->group(function () {
         Route::resource('images', 'PageImageController');
+    });
+
+    Route::prefix('gallery-management')->group(function () {
+        Route::get('/gallery/{type}', 'GalleryController@index')->name('galleries.index');
+        Route::post('/gallery/store', 'GalleryController@store')->name('galleries.store');
+        Route::get('/gallery/edit/{id}', 'GalleryController@edit')->name('galleries.edit');
+        Route::post('/gallery/update/{id}', 'GalleryController@update')->name('galleries.update');
     });
 
     Route::post('changeStatus', function (Illuminate\Http\Request $request){

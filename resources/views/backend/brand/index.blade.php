@@ -16,8 +16,8 @@
                     {{Form::select('type', ['Our Brands'=>"Our Brands", 'Online Partner'=>'Online Partner', 'Modern Trade'=>'Modern Trade'], null, ['class'=>'form-control'])}}
                     @if ($errors->has('type'))
                         <span class="help-block">
-                                 <strong>{{ $errors->first('type') }}</strong>
-                            </span>
+                             <strong>{{ $errors->first('type') }}</strong>
+                        </span>
                     @endif
                     <br>
                 </div>

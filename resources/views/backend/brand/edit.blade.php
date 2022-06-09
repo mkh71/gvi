@@ -19,7 +19,7 @@
                     <br>
                 </div>
                 <div class="col-lg-12 col-sm-12 {{$errors->has('name') ? 'has-error' : ''}}">
-                    {{ Form::label('','Category Name : ',['class'=>'control-label'])}}
+                    {{ Form::label('','Name : ',['class'=>'control-label'])}}
                     {{ Form::text('name', old('name'),['class'=>'form-control','placeholder'=>'Eg: Face Care'])}}
                     @if ($errors->has('name'))
                         <span class="help-block">
@@ -71,7 +71,7 @@
                     {id: 1, src:'{{asset('storage/'.$data['image'])}}'},
                 ],
                 maxFiles: 1,
-                label: 'Category Cover Pic',
+                label: 'Cover Pic',
                 imagesInputName: 'image',
                 extensions: ['.jpg', '.JPG', '.jpeg', '.JPEG', '.png', '.PNG', '.svg', '.SVG', '.gif', '.GIF'],
             }

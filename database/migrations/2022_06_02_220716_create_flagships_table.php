@@ -25,7 +25,8 @@ class CreateFlagshipsTable extends Migration
             $table->string('ig')->nullable();
             $table->string('yt')->nullable();
             $table->string('tt')->nullable();
-            $table->string('tw')->nullable();
+            $table->string('wa')->nullable();
+            $table->string('location')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

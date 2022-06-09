@@ -8,9 +8,9 @@
             <div class="swiper banner-slider">
                 <div class="swiper-wrapper">
                     @foreach($data['slider'] as $slider)
-                    <div class="item swiper-slide">
+                    <a href="{{$slider->back_link}}" class="item swiper-slide" target="_blank">
                         <img class="img-fluid" src="{{asset('storage/'. $slider->image)}}" alt="{{$slider->title}}">
-                    </div>
+                    </a>
                     @endforeach
                 </div>
                 <div class="swiper-button-next"></div>

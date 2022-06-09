@@ -102,18 +102,26 @@
                              <strong>{{ $errors->first('tt') }}</strong>
                         </span>
                 @endif
-
             </div>
 
-            <div class="col-lg-6 col-sm-12  form-group{{$errors->has('tw') ? 'has-error' : ''}}">
-                {{ Form::label('','Twitter Link  (with https://): ',['class'=>'control-label'])}}
-                {{ Form::text('tw',old('tt'),['class'=>'form-control','placeholder'=>'Eg: https://www.twitter.com/gvi'])}}
-                @if ($errors->has('tw'))
+            <div class="col-lg-6 col-sm-12  form-group{{$errors->has('wa') ? 'has-error' : ''}}">
+                {{ Form::label('','Whatsapp  (with https://): ',['class'=>'control-label'])}}
+                {{ Form::text('wa',old('wa'),['class'=>'form-control','placeholder'=>'Eg: https://www.whatsapp.com/gvi'])}}
+                @if ($errors->has('wa'))
                     <span class="help-block">
-                             <strong>{{ $errors->first('tw') }}</strong>
-                        </span>
+                         <strong>{{ $errors->first('wa') }}</strong>
+                    </span>
                 @endif
+            </div>
 
+            <div class="col-lg-6 col-sm-12  form-group{{$errors->has('location') ? 'has-error' : ''}}">
+                {{ Form::label('','Location  (with https://): ',['class'=>'control-label'])}}
+                {{ Form::text('location',old('location'),['class'=>'form-control','placeholder'=>'Eg: https://www.map.google.com/dhaka+mirpur+'])}}
+                @if ($errors->has('location'))
+                    <span class="help-block">
+                         <strong>{{ $errors->first('location') }}</strong>
+                    </span>
+                @endif
             </div>
 
             <div class="col-lg-6 col-sm-12  form-group{{$errors->has('image') ? 'has-error' : ''}}">
@@ -154,15 +162,18 @@
                             <td>{{$info->address }}</td>
                             <td>{{$info->phone }}</td>
                             <td>{{$info->email }}</td>
-                            <td><img src="{{asset('storage/'.$info->image)}}" class="img-fluid"
-                                     style="max-height: 60px; max-width: 50px"></td>
+                            <td>
+                                <img src="{{asset('storage/'.$info->image)}}" class="img-fluid"
+                                     style="max-height: 60px; max-width: 50px">
+                            </td>
                             <td>
                                 BL: <a href="{{$info->back_link}}" target="_blank">{{$info->back_link}}</a><br>
                                 FB: <a href="{{$info->fb}}" target="_blank">{{$info->fb}}</a><br>
                                 IG: <a href="{{$info->ig}}" target="_blank">{{$info->ig}}</a><br>
                                 YT: <a href="{{$info->yt}}" target="_blank">{{$info->yt}}</a><br>
                                 TT: <a href="{{$info->tt}}" target="_blank">{{$info->tt}}</a><br>
-                                TW: <a href="{{$info->tw}}" target="_blank">{{$info->tw}}</a>
+                                WA: <a href="{{$info->wa}}" target="_blank">{{$info->tw}}</a>
+                                Loc: <a href="{{$info->location}}" target="_blank">{{$info->tw}}</a>
                             </td>
                             <td>
                                 <a class="btn btn-sm btn-info edit" title="Edit"

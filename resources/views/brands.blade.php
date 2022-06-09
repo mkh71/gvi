@@ -5,7 +5,7 @@
     <!-- ==================== BRAND SECTION ==================== -->
     <div class="brand-section">
         <div class="section-title">
-            <h4>OUR BRANDS</h4>
+            <h4>BRANDS</h4>
         </div>
         <div class="container">
             <div class="row">
@@ -24,7 +24,7 @@
     <!-- ==================== TRADE SECTION ==================== -->
     <div class="brand-section">
         <div class="section-title">
-            <h4>OUR MODERN TRADE PARTNERS</h4>
+            <h4>MODERN TRADE PARTNERS</h4>
         </div>
         <div class="container">
             <div class="row">
@@ -43,7 +43,7 @@
     <!-- ==================== ONLINE SECTION ==================== -->
     <div class="brand-section">
         <div class="section-title">
-            <h4>OUR ONLINE PARTNERS</h4>
+            <h4>ONLINE PARTNERS</h4>
         </div>
         <div class="container">
             <div class="row">
