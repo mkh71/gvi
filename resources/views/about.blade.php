@@ -154,18 +154,14 @@
     <!-- ==================== TRAINING SECTION ==================== -->
     <section class="training">
         <div class="container">
-            <div class="item">
-                <a href="" class="inner">
-                    <div class="inner-img"><img src="{{asset('storage/'.$data->sales)}}" alt=""></div>
-                    <h4>SALES TRAINING</h4>
-                </a>
-            </div>
-            <div class="item">
-                <a href="" class="inner">
-                    <div class="inner-img"><img src="{{asset('storage/'.$data->beauty)}}" alt=""></div>
-                    <h4>Beauty TRAINING</h4>
-                </a>
-            </div>
+                    <a href="" class="item">
+                         <img src="{{asset('storage/'.$data->sales)}}" alt="">
+                         <div class="inner"><h4>SALES TRAINING</h4></div>
+                    </a>
+                    <a href="" class="item">
+                         <img src="{{asset('storage/'.$data->beauty)}}" alt="">
+                         <div class="inner"><h4>SALES TRAINING</h4></div>
+                    </a>
         </div>
     </section>
     <!-- ==================== TRAINING SECTION END ==================== -->
