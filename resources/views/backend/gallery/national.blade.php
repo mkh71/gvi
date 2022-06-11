@@ -20,7 +20,7 @@
 
                 <div class="col-lg-12 col-sm-12 {{$errors->has('group_location') ? 'has-error' : ''}}">
                     {{ Form::label('','Location: ',['class'=>'control-label'])}}
-                    {{ Form::text('group_location',old('group_location'),['class'=>'form-control','placeholder'=>'Eg: Dhaka'])}}
+                    {{ Form::text('group_location',old('group_location'),['class'=>'form-control','placeholder'=>'Eg: Dhaka', 'required'])}}
                     @if ($errors->has('group_location'))
                         <span class="help-block">
                              <strong>{{ $errors->first('group_location') }}</strong>
@@ -31,7 +31,7 @@
 
                 <div class="col-lg-12 col-sm-12 {{$errors->has('group_date') ? 'has-error' : ''}}">
                     {{ Form::label('','Date: ',['class'=>'control-label'])}}
-                    {{ Form::date('group_date',old('group_date'),['class'=>'form-control','placeholder'=>'Eg: 2022/01/01'])}}
+                    {{ Form::date('group_date',old('group_date'),['class'=>'form-control','placeholder'=>'Eg: 2022/01/01', 'required'])}}
                     @if ($errors->has('group_date'))
                         <span class="help-block">
                              <strong>{{ $errors->first('group_date') }}</strong>
@@ -72,9 +72,9 @@
                         <td>{{$info->group_location }}</td>
                         <td>{{ date("d-m-Y", strtotime($info->group_date)) }}</td>
                         <td>
-{{--                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">--}}
-{{--                                <i class="fa fa-pencil"></i>--}}
-{{--                            </a>--}}
+                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
                             <button class="btn btn-sm btn-danger erase"
                                     title="Delete"
                                     data-id="{{$info->id}}"

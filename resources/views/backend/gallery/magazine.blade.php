@@ -19,7 +19,7 @@
 
                 <div class="col-lg-12 col-sm-12 {{$errors->has('title') ? 'has-error' : ''}}">
                     {{ Form::label('','Title: ',['class'=>'control-label'])}}
-                    {{ Form::text('title',old('title'),['class'=>'form-control','placeholder'=>'Eg: Mirror'])}}
+                    {{ Form::text('title',old('title'),['class'=>'form-control','placeholder'=>'Eg: Mirror', 'required'])}}
                     @if ($errors->has('title'))
                         <span class="help-block">
                              <strong>{{ $errors->first('title') }}</strong>
@@ -58,9 +58,9 @@
                         <td><img src="{{asset('storage/'.$info->image)}}" class="img-fluid" style="max-height: 60px; max-width: 50px"></td>
                         <td>{{$info->title }}</td>
                         <td>
-{{--                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">--}}
-{{--                                <i class="fa fa-pencil"></i>--}}
-{{--                            </a>--}}
+                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
                             <button class="btn btn-sm btn-danger erase"
                                     title="Delete"
                                     data-id="{{$info->id}}"

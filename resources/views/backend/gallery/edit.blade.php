@@ -6,15 +6,15 @@
 @section('content')
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
-            {{ Form::model($data, ['route'=>['sliders.update', $data->id], 'method'=>'post', 'files'=> true]) }}
-            @method('PATCH')
+            {{ Form::model($data, ['route'=>['galleries.update', $data->id], 'method'=>'post', 'files'=> true]) }}
+
             <div class="col-lg-12 col-sm-12 {{$errors->has('image') ? 'has-error' : ''}}">
                 <div class="image" style="padding: 20px;"></div>
             </div>
 
             <div class="col-lg-12 col-sm-12 {{$errors->has('year') ? 'has-error' : ''}}">
                 {{ Form::label('','Year: ',['class'=>'control-label'])}}
-                {{ Form::selectRange('year', 2015, 2050, old('year'),['class'=>'form-control','placeholder'=>'Eg: 2020'])}}
+                {{ Form::selectRange('year', 2015, 2050, old('year'),['class'=>'form-control','placeholder'=>'Select Year'])}}
                 @if ($errors->has('year'))
                     <span class="help-block">
                          <strong>{{ $errors->first('year') }}</strong>

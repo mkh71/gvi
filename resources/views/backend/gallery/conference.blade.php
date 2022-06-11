@@ -19,7 +19,7 @@
 
                 <div class="col-lg-12 col-sm-12 {{$errors->has('year') ? 'has-error' : ''}}">
                     {{ Form::label('','Year: ',['class'=>'control-label'])}}
-                    {{ Form::selectRange('year', 1990, 2050, old('year'),['class'=>'form-control','placeholder'=>'Eg: 2020'])}}
+                    {{ Form::selectRange('year', 1990, 2050, old('year'),['class'=>'form-control','placeholder'=>'Select Year', 'required'])}}
                     @if ($errors->has('year'))
                         <span class="help-block">
                              <strong>{{ $errors->first('year') }}</strong>
@@ -58,9 +58,9 @@
                         <td><img src="{{asset('storage/'.$info->image)}}" class="img-fluid" style="max-height: 60px; max-width: 50px"></td>
                         <td>{{$info->year }}</td>
                         <td>
-{{--                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">--}}
-{{--                                <i class="fa fa-pencil"></i>--}}
-{{--                            </a>--}}
+                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
                             <button class="btn btn-sm btn-danger erase"
                                     title="Delete"
                                     data-id="{{$info->id}}"

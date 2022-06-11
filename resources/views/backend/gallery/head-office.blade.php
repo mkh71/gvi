@@ -44,9 +44,9 @@
                         <td>{{$loop->iteration }}</td>
                         <td><img src="{{asset('storage/'.$info->image)}}" class="img-fluid" style="max-height: 60px; max-width: 50px"></td>
                         <td>
-{{--                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">--}}
-{{--                                <i class="fa fa-pencil"></i>--}}
-{{--                            </a>--}}
+                            <a class="btn btn-sm btn-info edit" title="Edit" href="{{ route('galleries.edit',$info->id) }}">
+                                <i class="fa fa-pencil"></i>
+                            </a>
                             <button class="btn btn-sm btn-danger erase"
                                     title="Delete"
                                     data-id="{{$info->id}}"
