@@ -41,7 +41,7 @@ class GalleryController extends Controller
             foreach($request->image as $img){
                 $url = uploadFile('gallery/'.$request->type, $img);
                 $input['image'] = $url;
-                dd($input);
+                Gallery::query()->create($input);
             }
         }
 
