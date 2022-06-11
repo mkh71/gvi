@@ -8,7 +8,7 @@
             <div class="section-title">
                 <h4>PRODUCT CATEGORIES</h4>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach( $data as $category)
                 <div class="col-lg-4 col-md-6 col-12">
                     <div class="item">
