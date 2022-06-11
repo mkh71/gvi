@@ -109,7 +109,7 @@
                                 @foreach($dpy as $dp)
                                     @php($i = count($dpy))
                                     <div class="slide_item slide_item_active">
-                                        <a class="annual1Img" data-gall="annual1Gly" href="{{asset('storage/'.$dp->image)}}"><img src="{{asset('storage/'.$dp->image)}}" /></a>
+                                        <a class="ditf1Img" data-gall="annual1Gly" href="{{asset('storage/'.$dp->image)}}"><img src="{{asset('storage/'.$dp->image)}}" /></a>
                                     </div>
                                 @endforeach
                             </div>
