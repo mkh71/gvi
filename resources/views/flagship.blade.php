@@ -21,8 +21,8 @@
                                 <li><a class="social-icon" href="{{$info->ig}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                                 <li><a class="social-icon" href="{{$info->yt}}" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                                 <li><a class="social-icon" href="{{$info->tt}}" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                                <li><a class="social-icon" href="{{$info->wa}}" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a class="social-icon" href="{{$info->location}}" target="_blank"><i class="fa-brands fa-street-view"></i></a></li>
+                                <li><a class="social-icon" href="{{$info->wa}}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li><a class="social-icon" href="{{$info->location}}" target="_blank"><i class="fa fa-map-marker"></i></a></li>
                             </ul>
                         </div>
                     </div>
