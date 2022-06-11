@@ -8,7 +8,7 @@
             <h4>BRANDS</h4>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach($data->where('type', 'Our Brands') as $brand)
                 <div class="col-md-3 col-6">
                     <a href="{{$brand->back_link}}" class="item" target="_blank">
@@ -27,7 +27,7 @@
             <h4>MODERN TRADE PARTNERS</h4>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach($data->where('type', 'Modern Trade') as $brand)
                     <div class="col-md-2 col-4">
                         <a href="{{$brand->back_link}}" class="item" target="_blank">
@@ -46,7 +46,7 @@
             <h4>ONLINE PARTNERS</h4>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach($data->where('type', 'Online Partner') as $brand)
                     <div class="col-md-2 col-4">
                         <a href="{{$brand->back_link}}" class="item" target="_blank">
