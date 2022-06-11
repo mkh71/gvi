@@ -156,13 +156,13 @@
         <div class="container">
             <div class="item">
                 <a href="" class="inner">
-                    <img src="{{asset('storage/'.$data->sales)}}" alt="">
+                    <div class="item-img"><img src="{{asset('storage/'.$data->sales)}}" alt=""></div>
                     <h4>SALES TRAINING</h4>
                 </a>
             </div>
             <div class="item">
                 <a href="" class="inner">
-                    <img src="{{asset('storage/'.$data->beauty)}}" alt="">
+                    <div class="item-img"><img src="{{asset('storage/'.$data->beauty)}}" alt=""></div>
                     <h4>Beauty TRAINING</h4>
                 </a>
             </div>
