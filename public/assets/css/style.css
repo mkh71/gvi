@@ -1114,19 +1114,20 @@ li {
   position: relative;
   padding: 30px 0;
 }
-.training .item .item-img {
-  position: absolute;
-  height: 100%;
-  width: 50%;
-  left: 0;
-  top: 0;
-}
 .training .inner {
   background-color: var(--C-ORANGE);
   justify-content: flex-end;
   align-items: center;
   display: flex;
   height: 200px;
+}
+
+.training .item .inner-img {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: 0;
 }
 .training .item h4 {
   color: var(--C-WHITE);
