@@ -8,7 +8,7 @@
     <meta name="author" content="GVI">
     <title>GVI Dashboard | @yield('title')</title>
 
-    <link href="{{ url('/assets/favicon.png') }}" rel="icon">
+    <link rel="icon" href="{{ asset('storage/' . company()->favicon) }}">
     <!--Open Sans Font [ OPTIONAL ]-->
 
     <!--Bootstrap Stylesheet [ REQUIRED ]-->

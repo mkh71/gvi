@@ -36,12 +36,12 @@ class PageImageController extends Controller
             foreach($request->contact as $img){
                 $Curl = uploadFile('pages/contact', $img);
             }
-            $input['home'] = $Curl;
+            $input['contact'] = $Curl;
         }
         if ($request->hasFile('about')){
             $image = public_path('storage/').$pImage->about;
             destroyImage($image);
-            foreach($request->contact as $img){
+            foreach($request->about as $img){
                 $Aurl = uploadFile('pages/about', $img);
             }
             $input['about'] = $Aurl;
@@ -49,7 +49,7 @@ class PageImageController extends Controller
         if ($request->hasFile('sales')){
             $image = public_path('storage/').$pImage->sales;
             destroyImage($image);
-            foreach($request->contact as $img){
+            foreach($request->sales as $img){
                 $Surl = uploadFile('pages/sales', $img);
             }
             $input['sales'] = $Surl;
@@ -57,7 +57,7 @@ class PageImageController extends Controller
         if ($request->hasFile('beauty')){
             $image = public_path('storage/').$pImage->beauty;
             destroyImage($image);
-            foreach($request->contact as $img){
+            foreach($request->beauty as $img){
                 $Burl = uploadFile('pages/beauty', $img);
             }
             $input['beauty'] = $Burl;
