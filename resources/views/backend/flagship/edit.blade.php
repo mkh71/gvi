@@ -1,8 +1,8 @@
 @extends('backend.layouts.master')
-@section('title', "Update Categories")
-@section('top-title', "Update Categories")
-@section('page-title', "Update Categories")
-@section('panel-title', "Update Categories")
+@section('title', "Update Flagship")
+@section('top-title', "Update Flagship")
+@section('page-title', "Update Flagship")
+@section('panel-title', "Update Flagship")
 @section('content')
     <div class="row">
         <div class="col-lg-8 col-md-8 col-sm-12">
@@ -100,8 +100,8 @@
                 {{ Form::text('tt',old('tt'),['class'=>'form-control','placeholder'=>'Eg: https://www.tiktok.com/gvi'])}}
                 @if ($errors->has('tt'))
                     <span class="help-block">
-                         <strong>{{ $errors->first('tt') }}</strong>
-                    </span>
+                             <strong>{{ $errors->first('tt') }}</strong>
+                        </span>
                 @endif
             </div>
 
@@ -116,7 +116,7 @@
             </div>
 
             <div class="col-lg-6 col-sm-12  form-group{{$errors->has('location') ? 'has-error' : ''}}">
-                {{ Form::label('','Whatsapp  (with https://): ',['class'=>'control-label'])}}
+                {{ Form::label('','Location  (with https://): ',['class'=>'control-label'])}}
                 {{ Form::text('location',old('location'),['class'=>'form-control','placeholder'=>'Eg: https://www.map.google.com/dhaka+mirpur+'])}}
                 @if ($errors->has('location'))
                     <span class="help-block">

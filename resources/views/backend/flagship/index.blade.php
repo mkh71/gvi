@@ -25,7 +25,6 @@
                              <strong>{{ $errors->first('address') }}</strong>
                         </span>
                 @endif
-
             </div>
 
             <div class="col-lg-6 col-sm-12  form-group{{$errors->has('phone') ? 'has-error' : ''}}">
@@ -33,8 +32,8 @@
                 {{ Form::text('phone',old('phone'),['class'=>'form-control','placeholder'=>'Eg: 01xxxxxxxx'])}}
                 @if ($errors->has('phone'))
                     <span class="help-block">
-                             <strong>{{ $errors->first('phone') }}</strong>
-                        </span>
+                         <strong>{{ $errors->first('phone') }}</strong>
+                    </span>
                 @endif
 
             </div>
