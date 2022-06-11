@@ -108,6 +108,6 @@ Route::get('migrate',function(){
 });
 
 Route::get('storage',function(){
-    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    \Illuminate\Support\Facades\Artisan::call('storage:links');
     return redirect()->back();
 });

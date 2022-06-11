@@ -19,12 +19,6 @@ class PageImageController extends Controller
         return view('backend.page-image.edit', compact('data'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $pImage = PageImage::query()->find(1);
@@ -32,45 +26,45 @@ class PageImageController extends Controller
             $image = public_path('storage/').$pImage->home;
             destroyImage($image);
             foreach($request->home as $img){
-                $url = uploadFile('pages/home', $img);
+                $Hurl = uploadFile('pages/home', $img);
             }
-            $input['home'] = $url;
+            $input['home'] = $Hurl;
         }
         if ($request->hasFile('contact')){
             $image = public_path('storage/').$pImage->contact;
             destroyImage($image);
             foreach($request->contact as $img){
-                $url = uploadFile('pages/contact', $img);
+                $Curl = uploadFile('pages/contact', $img);
             }
-            $input['home'] = $url;
+            $input['home'] = $Curl;
         }
         if ($request->hasFile('about')){
             $image = public_path('storage/').$pImage->about;
             destroyImage($image);
             foreach($request->contact as $img){
-                $url = uploadFile('pages/about', $img);
+                $Aurl = uploadFile('pages/about', $img);
             }
-            $input['about'] = $url;
+            $input['about'] = $Aurl;
         }
         if ($request->hasFile('sales')){
             $image = public_path('storage/').$pImage->sales;
             destroyImage($image);
             foreach($request->contact as $img){
-                $url = uploadFile('pages/sales', $img);
+                $Surl = uploadFile('pages/sales', $img);
             }
-            $input['sales'] = $url;
+            $input['sales'] = $Surl;
         }
         if ($request->hasFile('beauty')){
             $image = public_path('storage/').$pImage->beauty;
             destroyImage($image);
             foreach($request->contact as $img){
-                $url = uploadFile('pages/beauty', $img);
+                $Burl = uploadFile('pages/beauty', $img);
             }
-            $input['beauty'] = $url;
+            $input['beauty'] = $Burl;
 
         }
         $pImage->update($input);
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Pictures updated');
     }
 
 }
