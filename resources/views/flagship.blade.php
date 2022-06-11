@@ -6,7 +6,7 @@
             <div class="section-title">
                 <h4>OUTLETS</h4>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 @foreach($data as $info)
                 <div class="col-md-4">
                     <div class="item">
