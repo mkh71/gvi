@@ -7,11 +7,11 @@ use Intervention\Image\Facades\Image as Image;
 
 function uploadFile($path, $file, $w = null, $h = null)
 {
-    $filename = time() . '.' . $file->getClientOriginalExtension();
+    $filePath = $path . '/' . time() . '-' .$file->getClientOriginalName();
+
     if($h != null && $w != null){
-        $filePath = Image::make($file)->resize(300, 300)->save( public_path($path. '/' . $filename) );
+        $filePath = Image::make($file)->resize(300, 300)->save( public_path($path. '/' . $filePath) );
     }else{
-        $filePath = $path . '/' . time() . '-' .$file->getClientOriginalName();
         Storage::disk('public')->put($filePath, file_get_contents($file));
     }
     return $filePath;

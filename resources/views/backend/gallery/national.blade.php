@@ -54,7 +54,7 @@
                 <br>
             </div>
             <div class="col-sm-12">
-                <table class="table table-responsive table-striped table-bordered datatable">
+                <table class="table table-responsive table-striped table-bordered">
                     <thead>
                     <tr>
                         <td>#</td>
