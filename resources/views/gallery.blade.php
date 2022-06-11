@@ -69,7 +69,7 @@
             <div class="scroll_container">
                 @foreach($data['ac'] as $ayk => $ay)
                 <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
-                    <h2>{{$ayk}}</h2>
+                    <h4>{{$ayk}}</h4>
                     <div id="{{$ayk}}" class="item slider">
                         <div class="slider_inner">
                             @foreach($ay as $ac)
@@ -103,7 +103,7 @@
             <div class="scroll_container">
                 @foreach($data['dp'] as $dpk => $dpy)
                     <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
-                        <h2>{{$dpk}}</h2>
+                        <h4>{{$dpk}}</h4>
                         <div id="{{$dpk}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($dpy as $dp)
