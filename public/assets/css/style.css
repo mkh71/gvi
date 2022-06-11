@@ -1141,15 +1141,15 @@ li {
   display: flex;
   height: 100%;
   z-index: 99;
-  width: 55%;
+  width: 61%;
 }
 .training .item:first-child .inner {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 18% 100%);
   background-color: var(--C-ORANGE);
   justify-content: flex-end;
 }
 .training .item:last-child .inner {
-  clip-path: polygon(0 0, 88% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 82% 0, 100% 100%, 0 100%);
   background-color: var(--C-DARK);
 }
 .training .item h4 {
