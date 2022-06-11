@@ -33,7 +33,7 @@
                 @foreach($data['nt'] as $l=>$ntLoc)
                    @foreach($ntLoc as  $dt=>$ntDate)
                     <div onmouseenter="slider('{{strtotime($dt)}}')" class="section-item scroll_item">
-                        <h2> {{$l}} <span>{{ date('d/m/Y', strtotime($dt)) }}</span></h2>
+                        <h4 class="d-flex"> {{$l}} <span>{{ date('d/m/Y', strtotime($dt)) }}</span></h4>
                         <div id="{{strtotime($dt)}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($ntDate as $dt)
