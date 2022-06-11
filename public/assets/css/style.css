@@ -47,6 +47,9 @@ button {
   border-radius: 0;
   border: none;
 }
+img{
+    object-fit: cover;
+}
 a {
   text-decoration: none;
   display: inline-block;
