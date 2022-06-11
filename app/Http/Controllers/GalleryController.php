@@ -63,8 +63,8 @@ class GalleryController extends Controller
                 $url = uploadFile('gallery/'.$request->type, $img);
                 $input['image'] = $url;
             }
-            $data->update($input);
         }
+        $data->update($input);
         return redirect(route('galleries.index', $data->type))->with('success', 'Gallery has been updated successfully');
     }
 
