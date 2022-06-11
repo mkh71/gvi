@@ -155,11 +155,11 @@
     <section class="training">
         <div class="container">
                     <a href="" class="item">
-                         <img src="{{asset('storage/'.$data->sales)}}" alt="">
+                         <img src="{{asset('storage/'.$data->sales)}}">
                          <div class="inner"><h4>SALES TRAINING</h4></div>
                     </a>
                     <a href="" class="item">
-                         <img src="{{asset('storage/'.$data->beauty)}}" alt="">
+                         <img src="{{asset('storage/'.$data->beauty)}}">
                          <div class="inner"><h4>SALES TRAINING</h4></div>
                     </a>
         </div>
