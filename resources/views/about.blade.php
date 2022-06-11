@@ -4,7 +4,7 @@
     <!-- ==================== BANNER SECTION ==================== -->
     <section class="container">
         <div class="container-banner">
-            <img src="{{asset('storage/'.$data->about)}}" alt="" class="img-fluid">
+            <img src="{{asset('storage/'.$data->about)}}" alt="">
         </div>
     </section>
     <!-- ==================== BANNER SECTION END ==================== -->
