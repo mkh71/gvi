@@ -1522,7 +1522,7 @@ li {
   box-shadow: -4px 7px 40px -14px #cacaca;
   transition: opacity 0.5s, visibility 0.5s;
 }
-.scroll_section h2::after {
+.scroll_section h4::after {
   z-index: -1;
   content: "";
   width: 100%;
@@ -1532,7 +1532,7 @@ li {
   position: absolute;
   background-color: rgba(241, 111, 36, 0.2);
 }
-.section-item:hover h2 {
+.section-item:hover h4 {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s, visibility 0.5s;
@@ -1556,7 +1556,7 @@ li {
   object-fit: cover;
 }
 @media only screen and (max-width: 576px) {
-  .section-item h2 {
+  .section-item h4 {
     font-size: 18px;
     opacity: 1 !important;
     visibility: visible !important;
@@ -1577,7 +1577,7 @@ li {
   height: 400px;
   width: 100%;
 }
-.magazine-section h2 {
+.magazine-section h4 {
   display: flex;
   font-size: 21px;
   margin-top: 5px;
