@@ -77,7 +77,7 @@
                                 href="{{ route('brands') }}">Brands</a></button>
                     </div>
                     <div class="accordion-item">
-                        <button class="accordion-button collapsed menu-item" id="flushTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        <button class="menu-item" id="flushTwo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                             aria-controls="collapseTwo"><a href="{{ route('category') }}">Category</a></button>
                     </div>
                     <div class="accordion-item">
