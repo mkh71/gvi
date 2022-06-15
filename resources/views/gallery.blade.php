@@ -37,13 +37,13 @@
                         <div id="{{strtotime($dt)}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($ntDate as $dt)
-                                    @php($i = count($ntDate))
-                                <div class="slide_item slide_item_active">
+                                <div class="slide_item  @if($loop->iteration == 1) slide_item_active @endif">
                                     <a class="national1Img" data-gall="national1Gly" href="{{asset('storage/'.$dt->image)}}"><img src="{{asset('storage/'.$dt->image)}}" /></a>
                                 </div>
                                 @endforeach
                             </div>
                             <div class="slider_pagination">
+                                    @php($i = count($ntDate))
                                 @for($x= 1; $x<= $i; $x++)
                                     <div class="pagination_icon"></div>
                                 @endfor
@@ -73,13 +73,13 @@
                     <div id="{{$ayk}}" class="item slider">
                         <div class="slider_inner">
                             @foreach($ay as $ac)
-                                @php($i = count($ay))
-                            <div class="slide_item slide_item_active">
+                            <div class="slide_item  @if($loop->iteration == 1) slide_item_active @endif">
                                 <a class="annual1Img" data-gall="annual1Gly" href="{{asset('storage/'.$ac->image)}}"><img src="{{asset('storage/'.$ac->image)}}" /></a>
                             </div>
                             @endforeach
                         </div>
                         <div class="slider_pagination">
+                            @php($i = count($ay))
                             @for($x= 1; $x<= $i; $x++)
                             <div class="pagination_icon"></div>
                             @endfor
@@ -107,13 +107,13 @@
                         <div id="{{$dpk}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($dpy as $dp)
-                                    @php($i = count($dpy))
-                                    <div class="slide_item slide_item_active">
+                                    <div class="slide_item @if($loop->iteration == 1) slide_item_active @endif">
                                         <a class="ditf1Img" data-gall="ditf1Gly" href="{{asset('storage/'.$dp->image)}}"><img src="{{asset('storage/'.$dp->image)}}" /></a>
                                     </div>
                                 @endforeach
                             </div>
                             <div class="slider_pagination">
+                                @php($i = count($dpy))
                                 @for($x= 1; $x<= $i; $x++)
                                     <div class="pagination_icon"></div>
                                 @endfor
