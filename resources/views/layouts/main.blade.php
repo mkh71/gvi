@@ -58,7 +58,7 @@
                             <div class="d-flex justify-content-end">
                                 <div class="search position-relative">
                                     <label for=""><i type="button" class="fa-solid fa-magnifying-glass"></i></label>
-                                    <input type="text" name="search" id="search-input" placeholder="Search for products">
+                                    <input type="text" name="search" id="search-input" placeholder="Search....">
                                 </div>
                                 <input type="submit" value="Search">
                             </div>

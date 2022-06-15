@@ -102,7 +102,7 @@
         <div class="scroll_section" id="ditf-section">
             <div class="scroll_container">
                 @foreach($data['dp'] as $dpk => $dpy)
-                    <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
+                    <div onmouseenter="slider('{{$dpk}}')" class="section-item scroll_item">
                         <h4>{{$dpk}}</h4>
                         <div id="{{$dpk}}" class="item slider">
                             <div class="slider_inner">
