@@ -32,9 +32,9 @@
             <div class="scroll_container">
                 @foreach($data['nt'] as $l=>$ntLoc)
                    @foreach($ntLoc as  $dt=>$ntDate)
-                    <div onmouseenter="slider('{{strtotime($dt)}}')" class="section-item scroll_item">
+                    <div onmouseenter="slider('NATIONAL{{strtotime($dt)}}')" class="section-item scroll_item">
                         <h4 class="d-flex"> {{$l}} <span>{{ date('d/m/Y', strtotime($dt)) }}</span></h4>
-                        <div id="{{strtotime($dt)}}" class="item slider">
+                        <div id="NATIONAL{{strtotime($dt)}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($ntDate as $dt)
                                 <div class="slide_item  @if($loop->iteration == 1) slide_item_active @endif">
@@ -68,9 +68,9 @@
         <div class="scroll_section" id="annual-section">
             <div class="scroll_container">
                 @foreach($data['ac'] as $ayk => $ay)
-                <div onmouseenter="slider('{{$ayk}}')" class="section-item scroll_item">
+                <div onmouseenter="slider('ANNUAL{{$ayk}}')" class="section-item scroll_item">
                     <h4>{{$ayk}}</h4>
-                    <div id="{{$ayk}}" class="item slider">
+                    <div id="ANNUAL{{$ayk}}" class="item slider">
                         <div class="slider_inner">
                             @foreach($ay as $ac)
                             <div class="slide_item  @if($loop->iteration == 1) slide_item_active @endif">
@@ -102,9 +102,9 @@
         <div class="scroll_section" id="ditf-section">
             <div class="scroll_container">
                 @foreach($data['dp'] as $dpk => $dpy)
-                    <div onmouseenter="slider('{{$dpk}}')" class="section-item scroll_item">
+                    <div onmouseenter="slider('DITF{{$dpk}}')" class="section-item scroll_item">
                         <h4>{{$dpk}}</h4>
-                        <div id="{{$dpk}}" class="item slider">
+                        <div id="DITF{{$dpk}}" class="item slider">
                             <div class="slider_inner">
                                 @foreach($dpy as $dp)
                                     <div class="slide_item @if($loop->iteration == 1) slide_item_active @endif">
