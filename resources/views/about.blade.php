@@ -160,7 +160,7 @@
                     </a>
                     <a href="" class="item">
                          <img src="{{asset('storage/'.$data->beauty)}}">
-                         <div class="inner"><h4>SALES TRAINING</h4></div>
+                         <div class="inner"><h4>BEAUTY TRAINING</h4></div>
                     </a>
         </div>
     </section>
