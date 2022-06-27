@@ -19,15 +19,16 @@
             <div class="row align-items-center">
                 <div class="col-md-6 d-none d-md-block"><img src="{{asset('assets/')}}/img/mail.png" alt="" class="img-fluid"></div>
                 <div class="col-md-6">
-                    <form action="">
+                    <form action="{{route('message')}}" method="post">
+                        @csrf
                         <div class="input-group">
-                            <input type="text" name="" id="" placeholder="Your Name">
+                            <input type="text" name="name" id="" placeholder="Your Name">
                         </div>
                         <div class="input-group">
-                            <input type="text" name="" id="" placeholder="Your email">
+                            <input type="text" name="email" id="" placeholder="Your email">
                         </div>
                         <div class="input-group">
-                            <textarea name="" id="" placeholder="Your question..."></textarea>
+                            <textarea name="message" id="" placeholder="Your question..."></textarea>
                         </div>
                         <div class="input-group">
                             <input type="submit" name="" id="" placeholder="Name">

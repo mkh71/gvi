@@ -28,6 +28,7 @@ Route::controller('FrontController')->group(function () {
 
     Route::get('/about-us', 'aboutUs')->name('aboutUs');
     Route::get('/contact-us', 'contact')->name('contactUs');
+    Route::post('/message', 'message')->name('message');
     Route::get('/brands', 'brands')->name('brands');
     Route::get('/category', 'categories')->name('category');
     Route::get('/flagship-outlets', 'flagship')->name('flagship');
@@ -69,6 +70,7 @@ Route::get('/', 'HomeController@index')->name('home');
         Route::get('/gallery/edit/{id}', 'GalleryController@edit')->name('galleries.edit');
         Route::post('/gallery/update/{id}', 'GalleryController@update')->name('galleries.update');
     });
+    Route::get('messages', 'WebController@messages')->name('admin.message');
 
     Route::post('changeStatus', function (Illuminate\Http\Request $request){
         $mod = "\App\Models\\".$request->model;

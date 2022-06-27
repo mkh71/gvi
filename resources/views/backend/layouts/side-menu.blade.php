@@ -7,7 +7,6 @@
         <div id="mainnav-menu-wrap">
             <div class="nano">
                 <div class="nano-content">
-
                     <div id="mainnav-shortcut" class="hidden">
                         <ul class="list-unstyled shortcut-wrap">
                             <li class="col-xs-3" data-content="My Profile">
@@ -134,7 +133,12 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <li class="{{ request()->is('home/messages') ? "active active-sub" : "" }}">
+                            <a href="{{route('admin.message')}}">
+                                <i class="demo-pli-mail-attachment"></i>
+                                <span class="menu-title">Messages</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

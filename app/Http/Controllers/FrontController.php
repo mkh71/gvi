@@ -6,6 +6,7 @@ use App\Brand;
 use App\Category;
 use App\Flagship;
 use App\Gallery;
+use App\Message;
 use App\PageImage;
 use App\Slider;
 use Illuminate\Http\Request;
@@ -56,5 +57,10 @@ class FrontController extends Controller
     public function contact(){
         $data = PageImage::query()->latest()->first();
         return view('contact' ,compact('data'));
+    }
+
+    public function message(Request $request){
+        Message::query()->create($request->all());
+        return redirect()->back()->with('success', 'Message is sent to the admin.');
     }
 }

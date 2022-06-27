@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Message;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -48,5 +49,8 @@ class WebController extends Controller
         return redirect(route('company.index'));
     }
 
-
+    public function messages(){
+        $messages = Message::query()->orderByDesc('created_at')->get();
+        return view('backend.messages', compact('messages'));
+    }
 }
